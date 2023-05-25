@@ -1,7 +1,7 @@
 import { DishType } from "@/types"
 import Image from "next/image"
 import { useContext } from "react";
-import { FormContext } from "../context/FormContext";
+import { FormContext } from "../../context/FormContext";
 import { motion } from "framer-motion";
 
 type DishTypeSelectProps = {
@@ -18,8 +18,8 @@ export default function DishTypeSelect({ img, type }: DishTypeSelectProps) {
 
     return (
         <motion.div 
-        onClick={() => formContext?.handleChange('type', type)} 
-        className={`w-full py-3 flex flex-col justify-center items-center gap-4 rounded-lg border border-gray-300 relative`}>
+        onClick={() => !selected && formContext?.handleChange('type', type)} 
+        className={`w-full py-3 cursor-pointer flex flex-col justify-center items-center gap-4 rounded-lg border border-gray-300 relative`}>
             <div className="h-14 w-14 flex justify-center items-center rounded-full overflow-hidden bg-gray-50">
                 <Image src={img} alt={name} className="h-10 w-10" />
             </div>
