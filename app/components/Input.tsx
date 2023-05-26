@@ -1,16 +1,16 @@
-import { useContext } from "react"
-import { FormContext } from "../context/FormContext"
+import { DishForm } from "@/types";
+import { UseFormRegister } from "react-hook-form";
 
 type InputProps = {
     title: string,
     name: string,
     type: string,
-    placeholder?: string,
+    error: string | undefined,
+    validators?: {[key: string]: any},
+    register: UseFormRegister<DishForm>
 }
 
-export default function Input({ title, name, type, placeholder }: InputProps) {
-
-    const formContext = useContext(FormContext);
+export default function Input({ title, name, type, error, validators, register }: InputProps) {
 
     return (
         <div className="flex flex-col gap-1">
@@ -18,13 +18,13 @@ export default function Input({ title, name, type, placeholder }: InputProps) {
             <input 
             type={type}
             step={type === 'time' ? 2 : 1}
-            name={name} 
-            id={name} 
-            className="bg-gray-50 border border-gray-300 px-2 py-1 rounded-lg"
-            required
-            placeholder={placeholder && placeholder}
-            defaultValue={formContext?.formData[name]}
-            onChange={(e) => formContext?.handleChange(name, e.target.value)} />
+            className={`bg-gray-50 border ${error ? 'border-red-500' : 'border-gray-300'} px-2 py-1 rounded-lg`}
+            defaultValue={type === 'time' ? '00:00:00' : undefined}
+            {...register(name, validators)}
+            />
+            <span className="text-red-500">
+                {error}
+            </span>
         </div>
     )
 }
