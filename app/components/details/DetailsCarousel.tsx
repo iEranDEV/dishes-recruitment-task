@@ -18,21 +18,69 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
                 return (
                     <DetailsCarouselElement key={`pizza`}>
                         <>
-                            <Input register={register} title="Number of slices" name="no_of_slices" type="number" error={errors.no_of_slices?.message} />
-                            <Input register={register} title="Diameter (cm)" name="diameter" type="number" error={errors.diameter?.message}  />
+                            <Input 
+                                register={register} 
+                                title="Number of slices" 
+                                name="no_of_slices" 
+                                type="number" 
+                                error={errors.no_of_slices?.message}
+                                validators={{
+                                    required: 'This field is required',
+                                    min: {
+                                        value: 1,
+                                        message: 'Number of slices cannot be lower than 1'
+                                    }
+                                }}
+                            />
+                            <Input 
+                                register={register} 
+                                title="Diameter (cm)" 
+                                name="diameter" 
+                                type="number" 
+                                error={errors.diameter?.message}
+                                validators={{
+                                    required: 'This field is required',
+                                    min: {
+                                        value: 1,
+                                        message: 'Diameter cannot be lower than 1'
+                                    }
+                                }}
+                            />
                         </>
                     </DetailsCarouselElement>
                 )
             case DishType.Soup:
                 return (
                     <DetailsCarouselElement key={`soup`}>
-                        <Input register={register} title="Spiciness scale (1-10)" name="spiciness_scale" type="number" error={errors.spiciness_scale?.message}  />
+                        <Input 
+                            register={register} 
+                            title="Spiciness scale (1-10)" 
+                            name="spiciness_scale" 
+                            type="number" 
+                            error={errors.spiciness_scale?.message}
+                            validators={{
+                                required: 'This field is required',
+                            }}
+                        />
                     </DetailsCarouselElement>
                 )
             case DishType.Sandwich:
                 return (
                     <DetailsCarouselElement key={`sandwich`}>
-                        <Input register={register} title="Slices of bread" name="slices_of_bread" type="number" error={errors.slices_of_bread?.message}  />
+                        <Input 
+                            register={register} 
+                            title="Slices of bread" 
+                            name="slices_of_bread" 
+                            type="number" 
+                            error={errors.slices_of_bread?.message}
+                            validators={{
+                                required: 'This field is required',
+                                min: {
+                                    value: 1,
+                                    message: 'Number of slices cannot be lower than 1'
+                                }
+                            }}
+                        />
                     </DetailsCarouselElement>
                 )
             default:
@@ -45,10 +93,8 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
     }
 
     return (
-        <div className="relative h-36">
-            <AnimatePresence>
-                {getCarouselElement()}
-            </AnimatePresence>
+        <div className="h-max">
+            {getCarouselElement()}
         </div>
     )
 }
