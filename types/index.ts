@@ -1,8 +1,7 @@
 export enum DishType {
-    Pizza = "Pizza",
-    Soup = "Soup",
-    Sandwich = "Sandwich",
-    None = "None"
+    Pizza = "pizza",
+    Soup = "soup",
+    Sandwich = "sandwich"
 }
 
 interface FormData {
@@ -17,4 +16,11 @@ export interface DishForm extends FormData {
     diameter?: number,
     spiciness_scale?: number,
     slices_of_bread?: number
+}
+
+export enum FormStatus {
+    FORM,
+    OK,
+    ERROR,
+    PENDING
 }

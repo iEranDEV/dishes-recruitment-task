@@ -21,7 +21,7 @@ export default function DishTypeSelect({ img, type, selectType, selected }: Dish
                 <Image src={img} alt={name} className="h-10 w-10" />
             </div>
 
-            <p className="text-sm font-semibold">{name}</p>
+            <p className="text-sm font-semibold capitalize">{name}</p>
 
             {selected && <motion.div layoutId="dishType" className="z-50 absolute left-0 top-0 h-full rounded-lg border-2 border-emerald-500 w-full">
                 

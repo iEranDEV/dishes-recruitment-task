@@ -29,7 +29,8 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
                                     min: {
                                         value: 1,
                                         message: 'Number of slices cannot be lower than 1'
-                                    }
+                                    },
+                                    validate: (v: number) => v % 1 === 0 || 'Number of slices must be an integer' 
                                 }}
                             />
                             <Input 
@@ -43,7 +44,7 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
                                     min: {
                                         value: 1,
                                         message: 'Diameter cannot be lower than 1'
-                                    }
+                                    },
                                 }}
                             />
                         </>
@@ -60,6 +61,7 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
                             error={errors.spiciness_scale?.message}
                             validators={{
                                 required: 'This field is required',
+                                validate: (v: number) => v % 1 === 0 || 'This value cannot be a float value' 
                             }}
                         />
                     </DetailsCarouselElement>
@@ -78,7 +80,8 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
                                 min: {
                                     value: 1,
                                     message: 'Number of slices cannot be lower than 1'
-                                }
+                                },
+                                validate: (v: number) => v % 1 === 0 || 'Number of slices must be an integer' 
                             }}
                         />
                     </DetailsCarouselElement>

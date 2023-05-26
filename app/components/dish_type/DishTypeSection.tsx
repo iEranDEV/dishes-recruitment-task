@@ -32,14 +32,14 @@ export default function DishTypeSection({ register, setValue, error, clearErrors
                 typeRef.current = e;
             }}>
                 <option value=""></option>
-                <option value="Pizza">Pizza</option>
-                <option value="Soup">Soup</option>
-                <option value="Sandwich">Sandwich</option>
+                <option value="pizza">Pizza</option>
+                <option value="soup">Soup</option>
+                <option value="sandwich">Sandwich</option>
             </select>
 
-            <DishTypeSelect img={pizzaImage} type={DishType.Pizza} selectType={selectType} selected={typeRef.current?.value === 'Pizza'} />
-            <DishTypeSelect img={soupImage} type={DishType.Soup} selectType={selectType} selected={typeRef.current?.value === 'Soup'} />
-            <DishTypeSelect img={sandwichImage} type={DishType.Sandwich} selectType={selectType} selected={typeRef.current?.value === 'Sandwich'} />
+            <DishTypeSelect img={pizzaImage} type={DishType.Pizza} selectType={selectType} selected={typeRef.current?.value === 'pizza'} />
+            <DishTypeSelect img={soupImage} type={DishType.Soup} selectType={selectType} selected={typeRef.current?.value === 'soup'} />
+            <DishTypeSelect img={sandwichImage} type={DishType.Sandwich} selectType={selectType} selected={typeRef.current?.value === 'sandwich'} />
             </div>
             {error && <span className="w-full text-red-500 text-sm flex gap-2 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-3 h-3">
