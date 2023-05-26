@@ -21,6 +21,10 @@ export interface DishForm extends FormData {
 export enum FormStatus {
     FORM,
     OK,
-    ERROR,
     PENDING
+}
+
+export interface INotification {
+    status: 'ok' | 'error',
+    name?: string 
 }

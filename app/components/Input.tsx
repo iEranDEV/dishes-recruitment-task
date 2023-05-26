@@ -14,7 +14,7 @@ export default function Input({ title, name, type, error, validators, register }
 
     return (
         <div className="flex flex-col gap-1">
-            <label htmlFor="name" className="text-gray-500 font-semibold">{title} <span className="text-gray-400">*</span></label>
+            <label htmlFor={name} className="text-gray-500 font-semibold">{title} <span className="text-gray-400">*</span></label>
             <input 
             type={type}
             step={type === 'time' ? 1 : 'any'}
