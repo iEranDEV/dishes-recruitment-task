@@ -51,7 +51,7 @@ export default function Form({ addNotification }: { addNotification: Function })
 
 	// Reset values after type change
 	useEffect(() => {
-		let arr = ['no_of_slices', 'diameter', 'spiciness_scale', 'splices_of_bread'];
+		let arr = ['no_of_slices', 'diameter', 'spiciness_scale', 'slices_of_bread'];
 		form.clearErrors(arr);
 		form.unregister(arr);
 	}, [values.type])
