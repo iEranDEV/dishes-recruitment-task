@@ -9,7 +9,9 @@ body {
 
 /* Spiciness scale range input styles */
 .spiciness-scale {
-	@apply px-[6px] border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none bg-transparent;
+	-webkit-padding-start: 6px;
+	-webkit-padding-end: 6px;
+	@apply border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none;
 }
 
 .spiciness-scale::-webkit-slider-runnable-track {
@@ -21,11 +23,11 @@ body {
 }
 
 .spiciness-scale::-webkit-slider-thumb {
-	@apply rounded-full transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 outline outline-[6px] -translate-y-[3px];
+	@apply !rounded-full transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 outline outline-[6px] -translate-y-[3px];
 }
 
 .spiciness-scale::-moz-range-thumb {
-	@apply rounded-full border-none transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 outline outline-[6px];
+	@apply !rounded-full transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 border-[6px];
 }
 
 .scale-green::-webkit-slider-thumb {
@@ -35,7 +37,7 @@ body {
 
 .scale-green::-moz-range-thumb {
 	box-shadow: -330px 0 0 320px #22c55e;
-	@apply outline-green-500;
+	@apply border-green-500;
 }
 
 .scale-yellow::-webkit-slider-thumb {
@@ -45,7 +47,7 @@ body {
 
 .scale-yellow::-moz-range-thumb {
 	box-shadow: -330px 0 0 320px #fbbf24;
-	@apply outline-amber-400;
+	@apply border-amber-400;
 }
 
 .scale-red::-webkit-slider-thumb {
@@ -55,5 +57,5 @@ body {
 
 .scale-red::-moz-range-thumb {
 	box-shadow: -330px 0 0 320px #ef4444;
-	@apply outline-red-500;
+	@apply border-red-500;
 }
