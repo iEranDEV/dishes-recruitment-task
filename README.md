@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dish creation form
 
-## Getting Started
+Live preview: [Click here](https://dishes-recruitment-task.vercel.app/)
 
-First, run the development server:
+Node version: 16.15.0
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Npm version: 8.5.5
+
+---
+
+## How to setup project
+
+Download project or clone it using `git clone`
+
+Make sure you have `node and npm` installed
+
+Run `npm install` to install all the necessary dependencies
+
+Create `.env.local` file in the project folder, copy content below and complete it with your api url
+
+```yaml
+NEXT_PUBLIC_API_URL=YOUR_API_URL
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Replace `YOUR_API_URL` with url to your api endpoint
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run the application, type `npm run dev` in the console
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The application will open in your browser on port 3000
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Technology stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- React 18.2.0
+- NextJS 13.4.3
+- TailwindCSS 3.3.2
+- React Hook Form 7.43.9
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Demo
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://dishes-recruitment-task.vercel.app/
