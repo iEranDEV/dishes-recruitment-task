@@ -6,8 +6,6 @@ Node version: 16.15.0
 
 Npm version: 8.5.5
 
----
-
 ## How to setup project
 
 Download project or clone it using `git clone`
@@ -28,16 +26,12 @@ To run the application, type `npm run dev` in the console
 
 The application will open in your browser on port 3000
 
----
-
 ## Technology stack
 
 - React 18.2.0
 - NextJS 13.4.3
 - TailwindCSS 3.3.2
 - React Hook Form 7.43.9
-
----
 
 ## Demo
 
