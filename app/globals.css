@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Change background color of body element */
 body {
 	@apply bg-gray-50;
+}
+
+/* Spiciness scale range input styles */
+.spiciness-scale {
+	@apply px-[6px] border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none bg-transparent;
+}
+
+.spiciness-scale::-webkit-slider-runnable-track {
+	@apply h-[10px] appearance-none transition-all bg-gray-200 rounded-full
+}
+
+.spiciness-scale::-webkit-slider-thumb {
+	@apply rounded-[50%] transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 outline outline-[6px] -translate-y-[3px];
+}
+
+.scale-green::-webkit-slider-thumb {
+	box-shadow: -330px 0 0 320px #22c55e;
+	@apply outline-green-500;
+}
+
+.scale-yellow::-webkit-slider-thumb {
+	box-shadow: -330px 0 0 320px #fbbf24;
+	@apply outline-amber-400;
+}
+
+.scale-red::-webkit-slider-thumb {
+	box-shadow: -330px 0 0 320px #ef4444;
+	@apply outline-red-500;
 }

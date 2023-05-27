@@ -1,10 +1,10 @@
 import { DishForm, FormStatus } from "@/types";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import DishTypeSection from "./dish_type/DishTypeSection";
 import Input from "./Input";
 import DetailsCarousel from "./details/DetailsCarousel";
 import SubmitButton from "./SubmitButton";
+import DishTypeSelect from "./dish_type/DishTypeSelect";
 
 
 export default function Form({ addNotification }: { addNotification: Function }) {
@@ -95,7 +95,7 @@ export default function Form({ addNotification }: { addNotification: Function })
                 {/* Dish type select input */}
                 <div className="flex flex-col gap-1">
                     <label htmlFor="name" className="text-gray-500 font-semibold">Dish type <span className="text-gray-400">*</span></label>
-                    <DishTypeSection clearErrors={form.clearErrors} register={form.register} setValue={form.setValue} error={form.formState.errors.type?.message} />
+                    <DishTypeSelect clearErrors={form.clearErrors} register={form.register} setValue={form.setValue} error={form.formState.errors.type?.message} />
                 </div>
 
                 <hr />
@@ -105,6 +105,7 @@ export default function Form({ addNotification }: { addNotification: Function })
 
                 <hr />
 
+                {/* Buttons */}
                 <div className="w-full flex justify-between items-center">
                     {/* Cancel button */}
                     <span className="h-8 w-8">

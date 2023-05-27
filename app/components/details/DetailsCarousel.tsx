@@ -1,13 +1,13 @@
-import { AnimatePresence } from "framer-motion";
 import DetailsCarouselElement from "./DetailsCarouselElement";
 import Input from "../Input";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { DishForm, DishType } from "@/types";
+import SpicinessScaleRange from "../SpicinessScaleRange";
 
 type DetailsCarouselProps = {
     errors: FieldErrors<DishForm>,
     values: DishForm,
-    register: UseFormRegister<DishForm>
+    register: UseFormRegister<DishForm>,
 }
 
 export default function DetailsCarousel({ errors, values, register }: DetailsCarouselProps) {
@@ -53,16 +53,15 @@ export default function DetailsCarousel({ errors, values, register }: DetailsCar
             case DishType.Soup:
                 return (
                     <DetailsCarouselElement key={`soup`}>
-                        <Input 
+                        <SpicinessScaleRange 
                             register={register} 
-                            title="Spiciness scale (1-10)" 
+                            title="Spiciness scale" 
                             name="spiciness_scale" 
-                            type="number" 
                             error={errors.spiciness_scale?.message}
                             validators={{
-                                required: 'This field is required',
-                                validate: (v: number) => v % 1 === 0 || 'This value cannot be a float value' 
+                                required: 'This field is required'
                             }}
+                            value={values.spiciness_scale || 1}
                         />
                     </DetailsCarouselElement>
                 )
