@@ -6,6 +6,8 @@ Node version: 16.15.0
 
 Npm version: 8.5.5
 
+It took me around **8 hours** to perform the task
+
 ## How to setup project
 
 Download project or clone it using `git clone`
