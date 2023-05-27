@@ -11,7 +11,7 @@ body {
 .spiciness-scale {
 	-webkit-padding-start: 6px;
 	-webkit-padding-end: 6px;
-	@apply border-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none bg-transparent;
+	@apply border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none bg-transparent;
 }
 
 .spiciness-scale::-webkit-slider-runnable-track {
@@ -23,7 +23,7 @@ body {
 }
 
 .spiciness-scale::-webkit-slider-thumb {
-	@apply !rounded-full transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 border-[6px] -translate-y-[3px];
+	@apply !rounded-full transition-all relative cursor-pointer appearance-none h-4 w-4 bg-gray-50 outline outline-[6px] -translate-y-[3px];
 }
 
 .spiciness-scale::-moz-range-thumb {
@@ -32,7 +32,7 @@ body {
 
 .scale-green::-webkit-slider-thumb {
 	box-shadow: -330px 0 0 320px #22c55e;
-	@apply border-green-500;
+	@apply outline-green-500;
 }
 
 .scale-green::-moz-range-thumb {
@@ -42,7 +42,7 @@ body {
 
 .scale-yellow::-webkit-slider-thumb {
 	box-shadow: -330px 0 0 320px #fbbf24;
-	@apply border-amber-400;
+	@apply outline-amber-400;
 }
 
 .scale-yellow::-moz-range-thumb {
@@ -52,7 +52,7 @@ body {
 
 .scale-red::-webkit-slider-thumb {
 	box-shadow: -330px 0 0 320px #ef4444;
-	@apply border-red-500;
+	@apply outline-red-500;
 }
 
 .scale-red::-moz-range-thumb {
