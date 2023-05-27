@@ -11,7 +11,7 @@ body {
 .spiciness-scale {
 	-webkit-padding-start: 6px;
 	-webkit-padding-end: 6px;
-	@apply border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none;
+	@apply border-none outline-none rounded-full w-full overflow-hidden transition-all h-7 appearance-none bg-transparent;
 }
 
 .spiciness-scale::-webkit-slider-runnable-track {
