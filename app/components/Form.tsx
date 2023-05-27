@@ -20,12 +20,17 @@ export default function Form({ addNotification }: { addNotification: Function })
 		let url = process.env.NEXT_PUBLIC_API_URL;
 		if(url) {
 			setStatus(() => (FormStatus.PENDING));
+            let toSend = data;
+            if(data.preparation_time.length === 5) {
+                toSend.preparation_time = data.preparation_time + ':00'
+            }
+
 			await fetch(url, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(data)
+				body: JSON.stringify(toSend)
 			}).then((res) => {
 				if(!res.ok) {
                     res.json().then((res) => {
