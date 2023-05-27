@@ -28,7 +28,7 @@ export default function SpicinessScaleRange({ title, name, error, validators, re
             
             <label htmlFor={name} className="text-gray-500 font-semibold">{title} <span className="text-gray-400">*</span></label>
             
-            <input className={`spiciness-scale ${getColor()}`} defaultValue={1} {...register(name, validators)} type="range" name={name} min={1} max={10} step={1} />
+            <input className={`spiciness-scale ${getColor()}`} defaultValue={1} {...register(name, validators)} type="range" name={name} min={1} max={10} step={1} id={name} />
 
             {/* Measurement lines */}
             <div className="w-full flex justify-between text-gray-300 text-sm px-2">
